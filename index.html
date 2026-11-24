@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculadora de Notas Definitivas</title>
+
+    <!-- Conexión con los estilos CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Conexión con JavaScript modular -->
+    <script type="module" src="./js/main.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Calculadora de Notas</h1>
+        <p>Consulta y calcula tu nota definitiva</p>
+    </header>
+
+    <main>
+
+        <!-- Pantalla de acceso -->
+        <section id="pantalla-acceso">
+            <h2>Bienvenido</h2>
+
+            <p>Ingresa tu número de documento para continuar.</p>
+
+            <form id="formulario-acceso">
+
+                <label for="documento">
+                    Número de documento
+                </label>
+
+                <input type="text" id="documento" name="documento" placeholder="Ejemplo: 1098765432" inputmode="numeric"
+                    required>
+
+                <button type="submit">
+                    Ingresar
+                </button>
+
+            </form>
+
+            <div id="mensaje-acceso" role="alert"></div>
+        </section>
+
+
+        <!-- Panel principal de notas -->
+        <section id="panel-notas" hidden>
+
+            <h2>Panel de notas</h2>
+
+            <p>
+                Documento del estudiante:
+                <strong id="documento-estudiante"></strong>
+            </p>
+
+            <p>
+                Bienvenido al sistema de cálculo de notas definitivas.
+            </p>
+
+            <!-- Aquí construiremos la configuración de notas -->
+
+
+            <div id="configuracion-notas">
+
+                <h3>Configurar evaluaciones</h3>
+
+                <p>Indica cuántas notas tiene tu asignatura.</p>
+
+                <form id="formulario-notas">
+
+                    <label for="cantidad-notas">
+                        Cantidad de notas
+                    </label>
+
+                    <input type="number" id="cantidad-notas" min="1" max="20" step="any" placeholder="Ejemplo: 3">
+
+                    <button type="submit">
+                        Generar
+                    </button>
+
+                </form>
+
+                <!-- Aquí aparecerán los mensajes -->
+                <div id="alertas-notas" role="alert"></div>
+
+                <!-- Aquí aparecerán las evaluaciones -->
+                <div id="contenedor-notas"></div>
+
+                <!-- Porcentaje acumulado -->
+                <p id="porcentaje-acumulado">
+                    Porcentaje acumulado: 0%
+                </p>
+
+            </div>
+
+
+            <!-- Aquí mostraremos el resultado -->
+
+            <section id="resultado">
+                <h2>Nota definitiva</h2>
+
+                <button type="button" id="btn-calcular">
+                    Calcular nota definitiva
+                </button>
+
+                <p id="mensaje-calculo"></p>
+
+                <h3 id="nota-definitiva"></h3>
+                <p id="estado-definitiva"></p>
+            </section>
+
+            <!-- Aquí mostraremos el historial -->
+
+            <section id="historial">
+                <h2>Historial de cálculos</h2>
+
+                <p id="mensaje-historial"></p>
+                <div id="lista-historial"></div>
+            </section>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Calculadora de Notas Definitivas</p>
+    </footer>
+
+</body>
+
+</html>
